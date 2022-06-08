@@ -455,8 +455,6 @@ def getChannels():
         cursor.execute(query)
 
         results = cursor.fetchall()
-        # print(results)
-        # print(x)
 
         return {"channels": results,"counts": x},200
 
@@ -622,9 +620,7 @@ def allThreads():
 
       try:
         cursor.execute(get_messages)
-
         results = cursor.fetchall()
-        # print(results)
         return {"messages": results}, 200
 
 
@@ -650,7 +646,6 @@ def getUnread():
         break
 
     x = get_allbeforetrack(user)
-    # print(x)
 
     return {'channels_counts': x},200
     
