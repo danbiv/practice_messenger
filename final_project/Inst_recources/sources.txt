@@ -1,0 +1,23 @@
+1. https://stackoverflow.com/questions/2794137/sanitizing-user-input-before-adding-it-to-the-dom-in-javascript
+2. https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapse_sidebar
+3. https://www.programiz.com/python-programming/datetime/current-datetime
+4. https://www.w3docs.com/tools/code-editor/12095
+5. https://www.w3schools.com/howto/howto_css_modals.asp
+6. https://www.w3docs.com/snippets/javascript/how-to-create-a-popup-form-using-javascript.html
+7. https://css-tricks.com/snippets/html/autocomplete-off/
+8. https://www.w3.org/International/questions/qa-html-encoding-declarations
+9. https://stackoverflow.com/questions/10842471/how-to-remove-all-elements-of-a-certain-class-from-the-dom
+10.https://stackoverflow.com/questions/51483733/adding-a-list-item-via-a-button-in-react/51483991
+11.https://stackoverflow.com/questions/1111056/get-time-zone-information-of-the-system-in-python
+12.https://stackoverflow.com/questions/6267816/getting-element-by-a-custom-attribute-using-javascript
+13.https://hackersandslackers.com/flask-routes/
+14.https://www.w3schools.com/js/js_scope.asp
+15.https://theplaidhorse.s3.amazonaws.com/media/uploads/2020/08/AdobeStock_326500445-1-1024x683.jpeg
+16. https://stackoverflow.com/questions/26990053/sql-server-how-to-get-rows-where-the-date-is-older-than-x-years
+17. https://stackoverflow.com/questions/6843201/how-to-clearinterval-with-unknown-id
+18. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+19. https://stackoverflow.com/questions/163360/regular-expression-to-match-urls-in-java
+20: https://stackoverflow.com/questions/163360/regular-expression-to-match-urls-in-java
+21. https://stackoverflow.com/questions/1500260/detect-urls-in-text-with-javascript
+22. https://stackoverflow.com/questions/175739/built-in-way-in-javascript-to-check-if-a-string-is-a-valid-number
+23. https://stackoverflow.com/questions/8359457/deleting-records-before-a-certain-date

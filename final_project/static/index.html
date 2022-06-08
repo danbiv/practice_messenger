@@ -1,0 +1,136 @@
+<html lang='en'>
+
+<head>
+  <title>Belay</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" text="text/css" href="../static/style.css">
+  <script src="../static/script.js"></script>
+
+  <!-- <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+
+</head>
+
+<body>
+
+<!-- Username Login STYLE:FLEX -->
+
+<div class='logbox' style='display:none'>
+  <div class="hero">
+
+    <!-- Title -->
+    <div class="start">
+      <h1>Belay: The Final </h1> 
+
+      <!-- Login Form -->
+      <form action="#" class='login'>
+      <input type="text" name="username" id="username" placeholder="Username" autocomplete="off"/>
+      <br>
+      <input type="password" name="password" id="password" placeholder="Password" autocomplete="off" />
+      <br></br>
+      <button id="login" ><h3>Log in</h3></button>
+      <button id="signup" ><h3>Signup</h3></button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Once logged in STYLE:BLOCK-->
+<div class='columned' style='display:none'>
+
+  <div class='columned-head'>
+    <h3>Belay ChatApp</h3>
+  </div>
+
+  
+  <div class='nav'>
+  <button class='showchats' onClick='openNav()'>☰ Chats</button>
+  <button class='closechats' onClick='closeNav()'>×</button>
+  </div>
+
+  <!-- On Login is Visable Else Hidden -->
+  <div class='columned-body'>
+
+    <!-- These Are the ChatNav Buttons -->
+    <div id='chats'>
+      <form action="#" id='chats_me'>
+        
+        <button id="CreateButton" >Create New Chat!</button>
+        <!-- <button class='a' id="rando">Random</button>   -->
+
+        <!-- Append Other Buttons Here  using-->
+
+      </form>  
+      
+    </div>
+
+    <!-- These are the messages and Send Button-->
+    <div id='mailbox'>
+
+      <!-- This is the Messages -->
+      <div class='messages' id='messages'>
+        <!-- <li>Your Messages Will Appear Here:</li> -->
+        
+      </div>
+
+      <!-- This is the Input buttons -->
+      <div class='penpost'>
+          <input type='text' id='tosend' placeholder='Your Text Here...'>
+          <input type='submit' id='sendbutton' value="Send">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- This is the Create Chat Form -->
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="unmodal" onclick="hideModal()">&times;</span>
+      
+          <div class="formContainer">
+            <h2>Create New Chat</h2>
+            <input type="text" id="chatname" placeholder="Channel Name"> <br/>
+            <button type="submit" class="btn" id='MakeNew'>Create</button>
+          </div>
+    
+    </div>
+    
+  </div>
+
+  <!-- This is where the Thread appears -->
+  <div id="myThread" class="modalThread">
+    
+    <div class="threadbox">
+      <h2> Thread: </h2>
+      <span class="unthread" onclick="hideThread()">&times;</span>
+      <div id='threadreplys'>
+        <!-- Thread Replys go here -->
+      </div>
+    
+      <div class='replypost'>
+        <input type='text' id='toreply' placeholder='Your Text Here...'>
+        <input type='submit' id='replybutton' value="Send">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="../static/buttons.js"></script>
+<script>
+
+window.addEventListener("load", loadState());
+window.addEventListener("popstate", () => {loadState(false)});
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,492 @@
+* {
+  box-sizing :border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  scrollbar-width: thin;          /* "auto" or "thin" */
+  scrollbar-color: black white;
+}
+button {
+  cursor: pointer;
+}
+
+/* ------------------------Chat Window------------------------- */
+
+.columned-head {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.nav{
+  display:none;
+}
+
+/* Messaging Column layout */
+.columned-body{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  column-gap: 5px;
+  height: 90%;
+  padding-top: 10px;
+}
+
+.columned-body > div{
+  background-color: white;
+  color: black;
+  border-color: black ;
+  border-width: 2px;
+  overflow: hidden;
+}
+
+.columned-body #chats{
+  height: auto;
+  width:auto;
+}
+
+#chats {
+  display:grid;
+  grid-column: 1;
+  border: 3px solid;
+  border-color: black;
+  padding-left: 5px;
+  padding-top: 5px;
+  overflow-y: auto;
+}
+
+#mailbox {
+  display: grid;
+  grid-column: 2/6;
+  grid-template-rows: repeat(10,1fr);
+  row-gap: 5px;
+  height:auto;
+}
+
+#mailbox .messages{
+  border-color: black;
+  border: 3px solid;
+  padding-left: 7px;
+  padding-top: 7px;
+  grid-row: 1/10;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+#mailbox .messages img{
+  width:100%;
+}
+
+#mailbox .penpost{
+  grid-row: 10/11;
+}
+
+.penpost{
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  height:auto;
+  width:auto;
+}
+
+.penpost input:first-of-type{
+  padding-left:15px;
+  grid-column: 1/8;
+}
+
+.penpost input:last-of-type{
+  grid-column: 8;
+}
+
+
+#chats form {
+  align-items: center;
+  overflow-y: auto;
+}
+
+#chats form button {
+  width: 98%;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#chats button:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+#chats button:active {
+  color: #000
+}
+
+#chats button:active:after {
+  background: transparent;
+}
+
+#chats button:hover:before {
+  opacity: 1;
+}
+
+#chats button:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+/* When Screen is small */
+@media only screen and (max-width:690px) {
+  /* Known bug - Once you start using the chat buttions to navigate you need to reload to reset */
+  .columned-head{
+    display:none;
+  }
+
+  .nav{
+    display:grid;
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  button.closechats {
+    grid-column: 10/11;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    align-content: center;
+    padding-top: 5px;
+    margin-bottom: 5px;
+  
+  }
+
+  button.closechats:hover {
+    background-color: rgb(44, 44, 44);
+  }
+  
+  button.showchats {
+    grid-column: 1/10;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    align-content: center;
+    padding-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  button.showchats:hover {
+    background-color: rgb(44, 44, 44);
+  }
+
+  .columned-body{
+    height: 92%;
+    padding-top: 0px;
+  }
+
+  #chats {
+    display:none;
+    grid-column: 1/6;
+  }
+
+  #mailbox {
+    grid-column: 1/6;
+  }
+  
+} 
+
+/* ---------------------Login Window--------------------------- */
+
+.logbox{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 99%;
+  border: 3px solid grey;
+  position: relative;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.hero .start {
+  text-align: center;
+}
+
+.start form {
+  align-items: center;
+}
+
+.start form input {
+  width: 80%;
+  margin-top:5px;
+  padding: 5px;
+}
+
+/* Index Button */
+.hero .start form button {
+  width: 140px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.hero button:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.hero button:active {
+  color: #000
+}
+
+.hero button:active:after {
+  background: transparent;
+}
+
+.hero button:hover:before {
+  opacity: 1;
+}
+
+.hero button:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+/* --------------------------------------Create Form------------------------------------------- */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  /* height: 50%; */
+  max-width: 574px;
+}
+
+/* The Close Button */
+.unmodal {
+  color: #aaaaaa;
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.unmodal:hover, .unmodal:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The inputs */
+.modal-content .formContainer {
+  align-items: center;
+}
+
+.modal-content .formContainer input {
+  width: 80%;
+  height: 55px;
+  margin-bottom:7px;
+  padding: 5px;
+  padding-left: 10px
+}
+
+.modal-content .formContainer button{
+  width: 80%;
+  height: 35px;
+}
+
+/* -----------------------MAILBOC-------------------------- */
+.lets {
+  border: 2px solid #dedede;
+  background-color: #857979;
+  border-radius: 5px;
+  width:98%;
+  min-height: 80px;
+  padding: 10px;
+  margin: 10px ;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+.lets li{
+  color: #000;
+  list-style-type: none; 
+}
+
+
+/* Time of message */
+.lets .time{
+  float: right;
+  color: rgb(255, 255, 255);
+  padding-right: 2px;
+}
+
+/* THIRD COLUMN ---------------------------------------- */
+/* The Modal (background) */
+.modalThread {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.threadbox {
+  display: grid;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid rgb(0, 0, 0);
+  width: 65%;
+  height: 95%;
+  max-width: 574px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(18,1fr);
+  row-gap: 5px;
+}
+
+.threadbox h2{
+  grid-column: 1/12;
+  grid-row: 1/4
+}
+
+/* The Close Button */
+.unthread {
+  color: #aaaaaa;
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+  grid-column: 13;
+  grid-row: 1/2;
+}
+
+.unthread:hover, .unthread:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The inputs */
+.threadbox #threadreplys {
+
+  border-color: black;
+  border: 3px solid;
+  padding-left: 7px;
+  padding-top: 7px;
+  padding-right: 7px;
+  grid-column: 1/14;
+  grid-row: 3/17;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.threadbox #threadreplys img{
+    width:100%;
+}
+
+  
+.threadbox .replypost{
+  grid-row: 17/19;
+  grid-column: 1/17;
+}
+  
+.replypost{
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  height:auto;
+  width:auto;
+}
+  
+.replypost input:first-of-type{
+  padding-left:15px;
+  grid-column: 1/8;
+}
+  
+.replypost input:last-of-type{
+  grid-column: 8;
+}
