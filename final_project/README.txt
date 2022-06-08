@@ -1,3 +1,6 @@
+This is the Final Project for a WebDevelopment Class I took over the summer of 2021.
+I'm proud of the final product so I'm posting it here.
+
 My final should run without any additional chats to install:
 
 in order toget tracked and up you have to visit the 
